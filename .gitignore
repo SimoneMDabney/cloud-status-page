@@ -1,0 +1,25 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Generated output
+results.json
+*.log
+
+# Secrets - never commit these
+.env
+*.pem
+*.key
+credentials
+.aws/
+
+# Terraform (if you do the stretch goal)
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+
+# OS / editor
+.DS_Store
+.vscode/

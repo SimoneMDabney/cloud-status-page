@@ -1,0 +1,31 @@
+# Cloud Status Page - checker configuration
+# Add or remove targets freely. Only check sites you own or that are
+# meant for public use (e.g. your own pages, example.com, public APIs).
+
+settings:
+  timeout_seconds: 5          # how long to wait before marking a check as failed
+  output_file: results.json   # where the checker writes its results
+  log_file: checker.log       # where the Bash wrapper / script logs activity
+  max_log_age_days: 7         # logs older than this get rotated out
+
+http_targets:
+  - name: Example
+    url: https://example.com
+    expected_status: 200
+
+  - name: My Portfolio
+    url: https://your-site.example   # TODO: replace with your own site
+    expected_status: 200
+
+  - name: GitHub API
+    url: https://api.github.com
+    expected_status: 200
+
+tcp_targets:
+  - name: Example HTTPS port
+    host: example.com
+    port: 443
+
+  - name: Example DNS (public resolver)
+    host: 1.1.1.1
+    port: 53
